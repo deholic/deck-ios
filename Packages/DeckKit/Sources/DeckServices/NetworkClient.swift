@@ -44,9 +44,10 @@ public struct NetworkClient: Sendable {
     return try decoder.decode(Response.self, from: data)
   }
 
-  public func sendEmpty<Request: Encodable>(url: URL, method: String, body: Request? = nil) async throws {
+  public func sendEmpty<Request: Encodable>(url: URL, method: String, body: Request? = nil, headers: [String: String] = [:]) async throws {
     var request = URLRequest(url: url)
     request.httpMethod = method
+    headers.forEach { request.setValue($1, forHTTPHeaderField: $0) }
     if let body {
       request.setValue("application/json", forHTTPHeaderField: "Content-Type")
       let encoder = JSONEncoder()
