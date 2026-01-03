@@ -1,9 +1,10 @@
 import Foundation
 import DeckServices
 
+@MainActor
 protocol AccountsBusinessLogic {
   func loadAccounts() async
-  func removeAccount(id: UUID) async
+  func removeAccount(id: String) async
   func startAuthentication(service: AccountServiceType, instance: String) async -> AuthSession?
   func finishAuthentication(session: AuthSession, callbackURL: URL) async
 }
@@ -24,6 +25,7 @@ protocol AccountsDisplayLogic: AnyObject {
   func setLoading(_ isLoading: Bool)
 }
 
+@MainActor
 final class AccountsInteractor: AccountsBusinessLogic {
   private let presenter: AccountsPresentationLogic
   private let worker: AccountsWorker
@@ -35,52 +37,52 @@ final class AccountsInteractor: AccountsBusinessLogic {
   }
 
   func loadAccounts() async {
-    await presenter.setLoading(true)
-    defer { Task { await presenter.setLoading(false) } }
+    presenter.setLoading(true)
+    defer { presenter.setLoading(false) }
     do {
       let accounts = try await worker.loadAccounts()
-      await presenter.presentAccounts(.init(accounts: accounts))
+      presenter.presentAccounts(.init(accounts: accounts))
     } catch {
-      await presenter.presentError(error.localizedDescription)
+      presenter.presentError(error.localizedDescription)
     }
   }
 
-  func removeAccount(id: UUID) async {
-    await presenter.setLoading(true)
-    defer { Task { await presenter.setLoading(false) } }
+  func removeAccount(id: String) async {
+    presenter.setLoading(true)
+    defer { presenter.setLoading(false) }
     do {
       try await worker.removeAccount(id: id)
       let accounts = try await worker.loadAccounts()
-      await presenter.presentAccounts(.init(accounts: accounts))
+      presenter.presentAccounts(.init(accounts: accounts))
     } catch {
-      await presenter.presentError(error.localizedDescription)
+      presenter.presentError(error.localizedDescription)
     }
   }
 
   func startAuthentication(service: AccountServiceType, instance: String) async -> AuthSession? {
     guard let instanceURL = parser.parse(instance) else {
-      await presenter.presentError(AuthenticationError.invalidInstance.localizedDescription)
+      presenter.presentError(AuthenticationError.invalidInstance.localizedDescription)
       return nil
     }
 
-    await presenter.setLoading(true)
-    defer { Task { await presenter.setLoading(false) } }
+    presenter.setLoading(true)
+    defer { presenter.setLoading(false) }
     do {
       return try await worker.startAuthentication(service: service, instance: instanceURL)
     } catch {
-      await presenter.presentError(error.localizedDescription)
+      presenter.presentError(error.localizedDescription)
       return nil
     }
   }
 
   func finishAuthentication(session: AuthSession, callbackURL: URL) async {
-    await presenter.setLoading(true)
-    defer { Task { await presenter.setLoading(false) } }
+    presenter.setLoading(true)
+    defer { presenter.setLoading(false) }
     do {
       let account = try await worker.finishAuthentication(session: session, callbackURL: callbackURL)
-      await presenter.presentAddedAccount(.init(account: account))
+      presenter.presentAddedAccount(.init(account: account))
     } catch {
-      await presenter.presentError(error.localizedDescription)
+      presenter.presentError(error.localizedDescription)
     }
   }
 }

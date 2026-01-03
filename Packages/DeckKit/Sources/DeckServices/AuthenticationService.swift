@@ -1,4 +1,5 @@
 import Foundation
+import DeckDomain
 
 public protocol AccountAuthenticationServicing: Sendable {
   func startAuthentication(service: AccountServiceType, instance: URL) async throws -> AuthSession
@@ -135,9 +136,10 @@ public struct AccountAuthenticationService: AccountAuthenticationServicing {
     )
 
     return Account(
-      service: .mastodon,
-      instance: instance,
+      id: UUID().uuidString,
       username: response.username,
+      instanceURL: instance,
+      platform: AccountServiceType.mastodon.platform,
       accessToken: tokenResponse.accessToken
     )
   }
@@ -226,9 +228,10 @@ public struct AccountAuthenticationService: AccountAuthenticationServicing {
     )
 
     return Account(
-      service: .misskey,
-      instance: instance,
+      id: UUID().uuidString,
       username: response.user.username,
+      instanceURL: instance,
+      platform: AccountServiceType.misskey.platform,
       accessToken: response.accessToken
     )
   }

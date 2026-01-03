@@ -1,6 +1,7 @@
 import Foundation
+import DeckDomain
 
-public enum AccountServiceType: String, Codable, CaseIterable, Identifiable {
+public enum AccountServiceType: String, Codable, CaseIterable, Identifiable, Sendable {
   case mastodon
   case misskey
 
@@ -16,23 +17,7 @@ public enum AccountServiceType: String, Codable, CaseIterable, Identifiable {
   }
 }
 
-public struct Account: Identifiable, Codable, Sendable, Equatable {
-  public let id: UUID
-  public let service: AccountServiceType
-  public let instance: URL
-  public let username: String
-  public let accessToken: String
-  public let createdAt: Date
-
-  public init(id: UUID = UUID(), service: AccountServiceType, instance: URL, username: String, accessToken: String, createdAt: Date = Date()) {
-    self.id = id
-    self.service = service
-    self.instance = instance
-    self.username = username
-    self.accessToken = accessToken
-    self.createdAt = createdAt
-  }
-}
+public typealias Account = DeckDomain.Account
 
 public enum AuthenticationError: Error, LocalizedError {
   case invalidInstance
@@ -67,6 +52,17 @@ public struct AuthSession: Sendable, Equatable {
     self.authorizationURL = authorizationURL
     self.callbackScheme = callbackScheme
     self.data = data
+  }
+}
+
+public extension AccountServiceType {
+  var platform: Platform {
+    switch self {
+    case .mastodon:
+      return .mastodon
+    case .misskey:
+      return .misskey
+    }
   }
 }
 

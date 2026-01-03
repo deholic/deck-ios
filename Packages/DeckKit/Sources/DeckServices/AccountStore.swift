@@ -19,7 +19,12 @@ public final class UserDefaultsAccountStorage: AccountStorage, @unchecked Sendab
 
   public func loadAccounts() throws -> [Account] {
     guard let data = userDefaults.data(forKey: key) else { return [] }
-    return try decoder.decode([Account].self, from: data)
+    do {
+      return try decoder.decode([Account].self, from: data)
+    } catch {
+      userDefaults.removeObject(forKey: key)
+      return []
+    }
   }
 
   public func saveAccounts(_ accounts: [Account]) throws {
@@ -45,7 +50,7 @@ public actor AccountStore {
     try storage.saveAccounts(accounts)
   }
 
-  public func removeAccount(id: UUID) async throws {
+  public func removeAccount(id: String) async throws {
     var accounts = try storage.loadAccounts()
     accounts.removeAll { $0.id == id }
     try storage.saveAccounts(accounts)

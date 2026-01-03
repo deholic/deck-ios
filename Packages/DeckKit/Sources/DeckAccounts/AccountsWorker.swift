@@ -1,7 +1,7 @@
 import Foundation
 import DeckServices
 
-final class AccountsWorker {
+final class AccountsWorker: Sendable {
   private let accountStore: AccountStore
   private let authenticationService: AccountAuthenticationServicing
 
@@ -14,7 +14,7 @@ final class AccountsWorker {
     try await accountStore.loadAccounts()
   }
 
-  func removeAccount(id: UUID) async throws {
+  func removeAccount(id: String) async throws {
     try await accountStore.removeAccount(id: id)
   }
 

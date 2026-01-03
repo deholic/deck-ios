@@ -60,7 +60,9 @@ struct AccountsView: View {
       } message: {
         Text(state.errorMessage ?? "Unknown error")
       }
-      .sheet(isPresented: $isPresentingAdd) {
+      .sheet(isPresented: $isPresentingAdd, onDismiss: {
+        Task { await interactor.loadAccounts() }
+      }) {
         AddAccountView(interactor: interactor)
       }
     }

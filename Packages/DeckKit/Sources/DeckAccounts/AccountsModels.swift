@@ -30,13 +30,14 @@ enum AccountsModels {
 }
 
 struct AccountRow: Identifiable, Equatable {
-  let id: UUID
+  let id: String
   let title: String
   let subtitle: String
 
   init(account: Account) {
     id = account.id
     title = "@\(account.username)"
-    subtitle = "\(account.service.displayName) · \(account.instance.host ?? account.instance.absoluteString)"
+    let platformName = account.platform == .mastodon ? "Mastodon" : "Misskey"
+    subtitle = "\(platformName) · \(account.instanceURL.host ?? account.instanceURL.absoluteString)"
   }
 }

@@ -1,4 +1,4 @@
-// swift-tools-version: 5.10
+// swift-tools-version: 6.0
 import PackageDescription
 
 let package = Package(
@@ -8,6 +8,8 @@ let package = Package(
     .library(
       name: "DeckKit",
       targets: [
+        "DeckDomain",
+        "DeckSharedUI",
         "DeckAccounts",
         "DeckCompose",
         "DeckTimeline",
@@ -18,7 +20,14 @@ let package = Package(
   ],
   targets: [
     .target(
-      name: "DeckServices"
+      name: "DeckDomain"
+    ),
+    .target(
+      name: "DeckSharedUI"
+    ),
+    .target(
+      name: "DeckServices",
+      dependencies: ["DeckDomain"]
     ),
     .target(
       name: "DeckAccounts",
@@ -26,15 +35,19 @@ let package = Package(
     ),
     .target(
       name: "DeckCompose",
-      dependencies: ["DeckServices"]
+      dependencies: ["DeckServices", "DeckDomain"]
     ),
     .target(
       name: "DeckTimeline",
-      dependencies: ["DeckServices"]
+      dependencies: ["DeckServices", "DeckDomain", "DeckSharedUI"]
     ),
     .target(
       name: "DeckSettings",
-      dependencies: ["DeckServices"]
+      dependencies: ["DeckServices", "DeckDomain"]
+    ),
+    .testTarget(
+      name: "DeckDomainTests",
+      dependencies: ["DeckDomain"]
     )
   ]
 )

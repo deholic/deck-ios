@@ -20,6 +20,8 @@ build/
 Packages/*
 !Packages/DeckKit/
 !Packages/DeckKit/**
+Packages/DeckKit/.build/
+Packages/DeckKit/.swiftpm/
 Package.resolved
 
 # Xcode project user data

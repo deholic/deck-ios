@@ -2,6 +2,7 @@ import SwiftUI
 import DeckServices
 
 public enum AccountsBuilder {
+  @MainActor
   public static func make(services: AppServices) -> some View {
     let state = AccountsViewState()
     let presenter = AccountsPresenter(view: state)
