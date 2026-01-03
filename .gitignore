@@ -17,7 +17,11 @@ build/
 
 # Swift Package Manager
 .build/
-Packages/
+Packages/*
+!Packages/DeckKit/
+!Packages/DeckKit/**
+Packages/DeckKit/.build/
+Packages/DeckKit/.swiftpm/
 Package.resolved
 
 # Xcode project user data
