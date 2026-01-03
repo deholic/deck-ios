@@ -15,6 +15,7 @@ Project guidelines for Swift/SwiftUI using Clean Swift and Swift Package Manager
 - Presenter maps Response to ViewModel; Views render only ViewModel.
 - Routing (if needed) is handled via SwiftUI navigation or a dedicated Router type.
 - Follow SOLID principles in all layers.
+- Swift 6 strict concurrency rules must be satisfied across all code.
 
 ## Project Structure (suggested)
 - `Sources/App`: App entry, root composition.
@@ -42,3 +43,6 @@ Project guidelines for Swift/SwiftUI using Clean Swift and Swift Package Manager
 - Unit test Interactors, Presenters, and Workers.
 - Use mocks/spies for VIP boundaries.
 - Keep UI tests minimal; prefer snapshot tests if needed.
+
+## Collaboration
+- When creating PR bodies, use valid Markdown and avoid malformed line breaks.

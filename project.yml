@@ -1,0 +1,48 @@
+name: Deck
+options:
+  minimumXcodeGenVersion: 2.44.1
+  createIntermediateGroups: true
+  usesTabs: false
+  indentWidth: 2
+  tabWidth: 2
+configs:
+  Debug: debug
+  Release: release
+settings:
+  base:
+    PRODUCT_NAME: Deck
+    SWIFT_VERSION: 5.10
+    IPHONEOS_DEPLOYMENT_TARGET: 18.0
+packages:
+  DeckKit:
+    path: Packages/DeckKit
+
+targets:
+  DeckApp:
+    type: application
+    platform: iOS
+    deploymentTarget: 18.0
+    sources:
+      - path: Sources/App
+    dependencies:
+      - package: DeckKit
+        product: DeckKit
+    configFiles:
+      Debug: Config/Debug.xcconfig
+      Release: Config/Release.xcconfig
+    info:
+      path: Config/Info.plist
+      properties:
+        CFBundleDisplayName: Deck
+        UILaunchScreen:
+          UIColorName: ""
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: true
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: ""
+        UIRequiresFullScreen: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown

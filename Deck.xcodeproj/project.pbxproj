@@ -1,0 +1,357 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B3DF59186391E2C58628FCB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2C18B08D4DC3237B308327 /* RootView.swift */; };
+		6C2F02215BA869ABFD8DB766 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F03EA2C6FA9FB745E89E73 /* AppContainer.swift */; };
+		CF0506979C444A887B7E0EB8 /* DeckKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1F14915F4CC4EBCC4E2986 /* DeckKit */; };
+		FE860523A345792215CD046A /* DeckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE14366E45C71A25BBDF4F4 /* DeckApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3E2C18B08D4DC3237B308327 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		85F03EA2C6FA9FB745E89E73 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		9B21B57E9E9C6AE5F36803B2 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		A3DBCE7A95784241ADC260DD /* DeckKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DeckKit; path = Packages/DeckKit; sourceTree = SOURCE_ROOT; };
+		B662E23A53ACAA091EAFA898 /* DeckApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = DeckApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C088493CE1041B54E4C7AA3D /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		CCE14366E45C71A25BBDF4F4 /* DeckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E254859999E608F4EC310E14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF0506979C444A887B7E0EB8 /* DeckKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		278F0329B004EACAE2EAD742 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				85F03EA2C6FA9FB745E89E73 /* AppContainer.swift */,
+				CCE14366E45C71A25BBDF4F4 /* DeckApp.swift */,
+				3E2C18B08D4DC3237B308327 /* RootView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5B4C6186FD2E4700749071F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B662E23A53ACAA091EAFA898 /* DeckApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		99992B00AFE9CD2B646CB357 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9B21B57E9E9C6AE5F36803B2 /* Debug.xcconfig */,
+				C088493CE1041B54E4C7AA3D /* Release.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		A790816E405651BC6937C5B9 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				A3DBCE7A95784241ADC260DD /* DeckKit */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		B5B1F6A761E8EBFFEE1B26F4 = {
+			isa = PBXGroup;
+			children = (
+				99992B00AFE9CD2B646CB357 /* Config */,
+				A790816E405651BC6937C5B9 /* Packages */,
+				BA628566A8BDAB2500318495 /* Sources */,
+				5B4C6186FD2E4700749071F2 /* Products */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		BA628566A8BDAB2500318495 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				278F0329B004EACAE2EAD742 /* App */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ABD76AF73B9C2D876980ACA8 /* DeckApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ECADA9E1CDA8445AC164993 /* Build configuration list for PBXNativeTarget "DeckApp" */;
+			buildPhases = (
+				B76C857ADFEBAE3FEC666F8C /* Sources */,
+				E254859999E608F4EC310E14 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeckApp;
+			packageProductDependencies = (
+				1E1F14915F4CC4EBCC4E2986 /* DeckKit */,
+			);
+			productName = DeckApp;
+			productReference = B662E23A53ACAA091EAFA898 /* DeckApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BDAD56553BA1FA8ECC4CDD4E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					ABD76AF73B9C2D876980ACA8 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2062413B14B800A606CA7BCC /* Build configuration list for PBXProject "Deck" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = B5B1F6A761E8EBFFEE1B26F4;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				333EA90042829252329CD831 /* XCLocalSwiftPackageReference "Packages/DeckKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ABD76AF73B9C2D876980ACA8 /* DeckApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B76C857ADFEBAE3FEC666F8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C2F02215BA869ABFD8DB766 /* AppContainer.swift in Sources */,
+				FE860523A345792215CD046A /* DeckApp.swift in Sources */,
+				3B3DF59186391E2C58628FCB /* RootView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		338A89F45D69E5AFAF170CC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C088493CE1041B54E4C7AA3D /* Release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Config/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DFA704F8849790582B6E3DC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B21B57E9E9C6AE5F36803B2 /* Debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Config/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E23DF288B50FF1BCB220C6AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Deck;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.1;
+			};
+			name = Debug;
+		};
+		E40D3DE40D4C323CAB30FD74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = Deck;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2062413B14B800A606CA7BCC /* Build configuration list for PBXProject "Deck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E23DF288B50FF1BCB220C6AE /* Debug */,
+				E40D3DE40D4C323CAB30FD74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4ECADA9E1CDA8445AC164993 /* Build configuration list for PBXNativeTarget "DeckApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFA704F8849790582B6E3DC5 /* Debug */,
+				338A89F45D69E5AFAF170CC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		333EA90042829252329CD831 /* XCLocalSwiftPackageReference "Packages/DeckKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/DeckKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1E1F14915F4CC4EBCC4E2986 /* DeckKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DeckKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = BDAD56553BA1FA8ECC4CDD4E /* Project object */;
+}
