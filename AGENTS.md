@@ -43,3 +43,6 @@ Project guidelines for Swift/SwiftUI using Clean Swift and Swift Package Manager
 - Unit test Interactors, Presenters, and Workers.
 - Use mocks/spies for VIP boundaries.
 - Keep UI tests minimal; prefer snapshot tests if needed.
+
+## Collaboration
+- When creating PR bodies, use valid Markdown and avoid malformed line breaks.
