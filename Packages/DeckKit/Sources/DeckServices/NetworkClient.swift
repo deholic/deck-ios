@@ -25,6 +25,19 @@ public struct NetworkClient: Sendable {
     return try decoder.decode(Response.self, from: data)
   }
 
+  public func send<Response: Decodable>(url: URL, method: String, headers: [String: String] = [:]) async throws -> Response {
+    var request = URLRequest(url: url)
+    request.httpMethod = method
+    headers.forEach { request.setValue($1, forHTTPHeaderField: $0) }
+
+    let (data, response) = try await urlSession.data(for: request)
+    guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
+      throw AuthenticationError.unexpectedResponse
+    }
+    let decoder = JSONDecoder()
+    return try decoder.decode(Response.self, from: data)
+  }
+
   public func sendForm<Response: Decodable>(url: URL, body: [String: String]) async throws -> Response {
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
