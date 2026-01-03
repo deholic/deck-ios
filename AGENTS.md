@@ -15,6 +15,7 @@ Project guidelines for Swift/SwiftUI using Clean Swift and Swift Package Manager
 - Presenter maps Response to ViewModel; Views render only ViewModel.
 - Routing (if needed) is handled via SwiftUI navigation or a dedicated Router type.
 - Follow SOLID principles in all layers.
+- Swift 6 strict concurrency rules must be satisfied across all code.
 
 ## Project Structure (suggested)
 - `Sources/App`: App entry, root composition.

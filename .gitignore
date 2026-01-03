@@ -20,8 +20,8 @@ build/
 Packages/
 Package.resolved
 
-# SwiftPM Xcode integration
-*.xcodeproj
+# Xcode project user data
+*.xcodeproj/xcuserdata/
 
 # Fastlane
 fastlane/report.xml
